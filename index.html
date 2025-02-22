@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Portfolio</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Smooth Scrolling */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    nav a {
+      color: #FF0000;
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #FF4444;
+      text-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000;
+    }
+
+    /* Hero Section */
+    #hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to bottom, #111, #000);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero h1 {
+      font-size: 4rem;
+      color: #FF0000;
+      text-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000;
+    }
+
+    #hero p {
+      font-size: 1.5rem;
+      color: #fff;
+    }
+
+    /* Terminal Animation */
+    #terminal {
+      font-family: 'Courier New', monospace;
+      font-size: 1.2rem;
+      color: #00FF00;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+
+    /* Sections */
+    section {
+      padding: 100px 20px;
+      text-align: center;
+      opacity: 0; /* Hidden by default */
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      color: #FF0000;
+      text-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    /* Skills Section */
+    #skills {
+      background: linear-gradient(to bottom, #000, #111);
+    }
+
+    .skill {
+      display: inline-block;
+      margin: 20px;
+      padding: 20px;
+      background: rgba(255, 0, 0, 0.1);
+      border: 1px solid #FF0000;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #FF0000, 0 0 40px #FF0000;
+    }
+
+    /* Portfolio Section */
+    #portfolio {
+      background: linear-gradient(to bottom, #111, #000);
+    }
+
+    .project {
+      display: inline-block;
+      margin: 20px;
+      padding: 20px;
+      background: rgba(255, 0, 0, 0.1);
+      border: 1px solid #FF0000;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #FF0000, 0 0 40px #FF0000;
+    }
+
+    /* Contact Section */
+    #contact {
+      background: linear-gradient(to bottom, #000, #111);
+    }
+
+    #contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #contact-form input, #contact-form textarea {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      background: rgba(255, 0, 0, 0.1);
+      border: 1px solid #FF0000;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    #contact-form button {
+      padding: 10px 20px;
+      background: #FF0000;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+    #contact-form button:hover {
+      box-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000;
+    }
+
+    /* Footer */
+    footer {
+      padding: 20px;
+      background: #000;
+      text-align: center;
+      color: #fff;
+    }
+
+    footer a {
+      color: #FF0000;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div>
+      <h1>0-d-a-y</h1>
+      <p>Welcome to my world of code, exploits, and innovation.</p>
+      <div id="terminal">
+        <span id="terminal-text"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a tool maker, I love to build tools for hackers. </p>  
+</section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">Penetration Testing</div>
+    <div class="skill">Web Exploits</div>
+    <div class="skill">Cryptography</div>
+    <div class="skill">Reverse Engineering</div>
+    <div class="skill">Exploit Developer</div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="project">Project 1: Secure Network Design</div>
+    <div class="project">Project 2: Exploit Development</div>
+  <a href="https://github.com/0-d-a-y" <div class="project">Project 3: Open Source Tools</div></a>
+</section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Hacker Portfolio. All rights reserved. | <a href="https://github.com/0-d-a-y" target="_blank">GitHub</a></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Terminal Typing Animation
+    const terminalText = document.getElementById('terminal-text');
+    const text = "> Accessing system...\n> Welcome, Hacker.";
+    let index = 0;
+
+    function typeText() {
+      if (index < text.length) {
+        terminalText.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, 100); // Typing speed
+      }
+    }
+    typeText();
+
+    // Scroll Animations
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Audio Effects (Optional)
+    const audio = new Audio('a.mp3'); // Add a sound file
+    audio.loop = true;
+    document.addEventListener('click', () => {
+      audio.play();
+    });
+  </script>
+</body>
+</html>
